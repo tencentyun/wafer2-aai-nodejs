@@ -1,0 +1,37 @@
+<!--index.wxml-->
+<view class="container">
+    <!-- 语音列表 -->
+    <view class="note-list">
+        <view
+            class="{{ note.playing ? 'note-item voice-playing' : 'note-item' }}"
+            wx:for="{{ notes }}"
+            wx:for-item="note"
+            wx:for-index="idx"
+            wx:key="{{ note.key }}"
+            data-voiceidx="{{ idx }}"
+            data-voicekey="{{ note.key }}"
+            bindtap="playVoice"
+            bindlongpress="showVoiceActions"
+        >
+            <view
+                class="note-item-voice"
+                data-voiceidx="{{ idx }}"
+                data-voicepath="{{ note.path }}"
+                data-voicekey="{{ note.key }}"
+            >
+                <image src="./voice-item.png"></image>
+                <text>{{ note.duration }}s</text>
+            </view>
+            <view class="note-item-word" wx:if="{{ note.isRec }}">
+                <text>{{ note.word ? note.word : '未识别出结果，长按可以重新识别' }}</text>
+            </view>
+        </view>
+    </view>
+
+    <image src="./splash.png" class="note-splash" wx:if="{{ notes.length === 0 }}"></image>
+    <view class="note-gradient"></view>
+
+    <view class="note-btn" bindtouchstart="voiceStartRecord" bindtouchend="voiceEndRecord">
+        <image src="./voice.png" width="64rpx" width="64rpx"></image>
+    </view>
+</view>

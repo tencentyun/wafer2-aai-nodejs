@@ -1,0 +1,12 @@
+{
+  "pages":[
+    "pages/index/index"
+  ],
+  "window":{
+    "backgroundColor":"#FFFFFF",
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTitleText": "语音录",
+    "navigationBarTextStyle":"black"
+  }
+}
