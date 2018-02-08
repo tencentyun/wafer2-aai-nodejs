@@ -3,7 +3,7 @@
  */
 
 // 此处主机域名修改成腾讯云解决方案分配的域名
-var host = 'https://465712482.ijason.club/weapp';
+var host = 'https://465712482.ijason.club';
 
 var config = {
 
@@ -12,7 +12,7 @@ var config = {
         host,
         
         // 语音识别接口
-        voiceUrl: `${host}/recognize`
+        voiceUrl: `${host}/weapp/recognize`
     }
 };
 
